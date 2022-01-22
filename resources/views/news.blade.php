@@ -2,8 +2,17 @@
 
 @section('content')
 
-    <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+    
+        <ul class="list-group main_list">
+        
+        @foreach($news as $onenews)
+            <li class="list-group-item one_news"><a href="{{route('news.show', $onenews)}}">{{$onenews->name}}</a>  <button class='btn btn-primary ml-3'>Add to Favorite</button></li>
+            @endforeach
+           
+     
+        </ul>
+
+
+
+
 @endsection

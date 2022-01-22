@@ -20,7 +20,8 @@ class NewsFactory extends Factory
             'image' => $this->faker->image(null,640,480),
             'date' => $this->faker->date('Y-m-d','now'),
             'city_id'=> $this->faker->numberBetween(1,2),
-            'user_id'=> $this->faker->numberBetween(1,2),
+            'tags'=>'politics',   // example of tags  'politics', 'economy', 'weather', etc.
+            
 
         ];
     }

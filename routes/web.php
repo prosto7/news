@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::redirect('/', 'news');
 
-Route::get('/', function () {
-    return view('news');
-});
+Route::resource('news', NewsController::class);
+
+
+Route::get('/favourite-news', [UserController::class, 'getMyNews'])->name('mynews');;
+

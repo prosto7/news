@@ -6,3 +6,8 @@ body {
     text-align: center;
   }
   
+
+  .block_onenews {
+      border: 1px solid rgba(100, 100, 100, 0.459);
+  }
+
