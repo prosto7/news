@@ -17,10 +17,10 @@ class NewsFactory extends Factory
             //
             'name' => $this->faker->sentence(3),
             'text' => $this->faker->paragraph(7),
-            'image' => $this->faker->image(null,640,480),
+            'image' => $this->faker->imageUrl(360, 360, 'animals', true, 'cats'),
             'date' => $this->faker->date('Y-m-d','now'),
             'city_id'=> $this->faker->numberBetween(1,2),
-            'tags'=>'politics',   // example of tags  'politics', 'economy', 'weather', etc.
+            'tags'=>'economy',   // example of tags  'politics', 'economy', 'weather', etc.
             
 
         ];

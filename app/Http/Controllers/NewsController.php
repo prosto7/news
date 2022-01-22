@@ -11,50 +11,34 @@ class NewsController extends Controller
     //
     public function index(Request $request)
     {
-            $news = News::query();
+            $all_news = News::query();
             // // dd($news);
             // return view('news',compact('news'));
 
             if (request('term')) {
-                $news->where('name', 'Like', '%' . request('term') . '%');
+                $all_news->where('name', 'Like', '%' . request('term') . '%');
             }
-           $news = $news->orderBy('id', 'DESC')->paginate(10);
+           $news = $all_news->orderBy('id', 'DESC')->paginate(50);
 
 
            return view('news', compact('news'));
 
-
-
-            // $search_news = News::where([
-            //     ['name', '!=' , Null],
-            //     [function($query) use ($request) {
-            //         if(($term=$request->term)) {
-            //         $query->orWhere('name', 'LIKE', '%'.$term.'%')->get();
-                  
-            //     }
-            //   }]
-            // ])
-            // ->orderBy("id","desc")
-            // ->paginate(10);
-            // dd($search_news);
-            // return view('news', compact('news'))->with('i',(request()->input('page',1)-1)*5);
     }
 
-    public function show(News $news)
+    public function show(Request $request, News $news)
+
     {
-           
-            return view('show', compact('news'));
+           $news_tag = $news->tags;
+
+           $all_news = News::query();
+      
+           $related_news =  $all_news->where('tags', 'Like', '%' . $news_tag . '%')->orderBy('id', 'DESC')->paginate(10);
+    
+       
+
+            return view('show', compact('news','related_news'));
+          
     }
-
-
-    public function search()
-    {
-
-    }
-
-
-
-
 
 
     // public function getMyNews(){
