@@ -2,8 +2,8 @@
 
 @section('content')
  
-    <h2 class="h2 text-dark">All News</h2>
-        <div class="row">
+    <h2 class="h2 text-dark mb-5">News</h2>
+        <div class="row mb-2">
             <a class="mr-5"href="{{ route('news.city',[1]) }}" ><h2>City one</h2></a>
             <a class="mr-5" href="{{ route('news.city',[2]) }}"><h2>City two</h2></a>
             <a class="mr-5" href="{{ route('news.index')}}"><h2>All News</h2></a>
