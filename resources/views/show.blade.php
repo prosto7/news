@@ -22,16 +22,16 @@
     <h4 class="m-5 tags">#{{$news->tags}}</h4>
     <div class="row mt-5 block_related_news">
 
-        @foreach($related_news as $related_onenews)
+        @foreach($relatedNews as $relatedOneNews)
         <div class="out_related_block">
             <div class="related_onenews m-3">
-                <div class="related_news_col"><a href="{{route('news.show', $related_onenews)}}">
-                        <h4>{{$related_onenews->name}}</h4>
+                <div class="related_news_col"><a href="{{route('news.show', $relatedOneNews)}}">
+                        <h4>{{$relatedOneNews->name}}</h4>
                     </a></div>
 
                 <div class="related_news_col">
-                    <span class="date_news">{{$related_onenews->date}}</span>
-                    <img src="{{$related_onenews->image}}" alt="">
+                    <span class="date_news">{{$relatedOneNews->date}}</span>
+                    <img src="{{$relatedOneNews->image}}" alt="">
                 </div>
 
             </div>

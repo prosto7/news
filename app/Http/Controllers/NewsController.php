@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\City;
+
 use App\Models\News;
+use App\Models\NewsUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,11 +13,11 @@ class NewsController extends Controller
     //
     public function index(Request $request)
     {
-            $all_news = News::query();
+            $allNews = News::query();
             if (request('term')) {
-                $all_news->where('name', 'Like', '%' . request('term') . '%');
+                $allNews->where('name', 'Like', '%' . request('term') . '%');
             }
-            $news = $all_news->orderBy('id', 'ASC')->paginate(50);
+            $news = $allNews->orderBy('id', 'ASC')->paginate(50);
 
            return view('news', compact('news'));
 
@@ -26,30 +27,25 @@ class NewsController extends Controller
 
     {
        
-           $news_tag = $news->tags;
-           $all_news = News::query();
-           $related_news =  $all_news->where('tags', 'Like', '%' . $news_tag . '%')->orderBy('id', 'DESC')->paginate(10);
+           $newsTags = $news->tags;
+           $allNews = News::query();
+           $relatedNews =  $allNews->where('tags', 'Like', '%' . $newsTags . '%')->orderBy('id', 'DESC')->paginate(10);
 
-            return view('show', compact('news','related_news'));
+            return view('show', compact('news','relatedNews'));
           
     }
 
 
-    // public function getMyNews(){
+    public function store(Request $request)
+    {
 
-    //     $user = 1;
+        NewsUser::create($request->only(['user_id','news_id']));
 
-    //         $users = \App\Models\User::all();
-    //         // dd($users);
-
-    //     return view('mynews',compact('users'));
-
-    //     //     $news = DB::table('news')->where('user_id', '=', $user)->get();
-    //     //     $news = json_decode($news);
- 
         
+        return redirect()->route('mynews')->withSuccess('Added News to favourite '.$request->name);
+
+    }
 
 
-    // }
 }
 

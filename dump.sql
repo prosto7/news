@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 23, 2022 at 05:03 PM
+-- Generation Time: Jan 24, 2022 at 12:30 AM
 -- Server version: 8.0.27-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -139,8 +139,8 @@ CREATE TABLE `news_user` (
   `id` bigint UNSIGNED NOT NULL,
   `user_id` bigint UNSIGNED NOT NULL,
   `news_id` bigint UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -157,7 +157,11 @@ INSERT INTO `news_user` (`id`, `user_id`, `news_id`, `created_at`, `updated_at`)
 (8, 2, 2, '2022-01-22 08:53:26', '2022-01-22 08:53:26'),
 (9, 3, 6, '2022-01-22 08:53:26', '2022-01-22 08:53:26'),
 (10, 2, 2, '2022-01-22 08:53:26', '2022-01-22 08:53:26'),
-(11, 2, 9, '2022-01-22 08:53:26', '2022-01-22 08:53:26');
+(11, 2, 9, '2022-01-22 08:53:26', '2022-01-22 08:53:26'),
+(35, 1, 2, '2022-01-23 10:23:44', '2022-01-23 10:23:44'),
+(36, 1, 5, '2022-01-23 10:23:55', '2022-01-23 10:23:55'),
+(37, 1, 7, '2022-01-23 10:25:04', '2022-01-23 10:25:04'),
+(38, 1, 4, '2022-01-23 10:29:01', '2022-01-23 10:29:01');
 
 -- --------------------------------------------------------
 
@@ -273,7 +277,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `news_user`
 --
 ALTER TABLE `news_user`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

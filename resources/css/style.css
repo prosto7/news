@@ -80,3 +80,8 @@ body {
     color: rgb(54, 53, 53);
     font-weight: 600;
   }
+
+
+  .name_news_block {
+    margin:auto;
+  }

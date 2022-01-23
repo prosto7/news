@@ -12,7 +12,8 @@
         <ul class="list-group main_list">
  
         @foreach($news as $onenews)
-            <li class="list-group-item one_news"><a href="{{route('news.show', $onenews)}}">{{$onenews->name}}</a>  <button class='btn btn-primary ml-3'>Add to Favorite</button></li>
+            <li class="list-group-item one_news"><div class="name_news_block"><a href="{{route('news.show', $onenews)}}">{{$onenews->name}}</a> </div> <div>
+                <a class='btn btn-primary ml-3' href="{{route('user.like',$onenews->id)}}">Add to Favorite</a></div></li>
         @endforeach
            
         </ul>

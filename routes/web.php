@@ -22,3 +22,5 @@ Route::resource('news', NewsController::class);
 Route::get('/news/city/{city_id}', [CityController::class, 'getCityNews'])->name('news.city');
 
 Route::get('/favourite-news', [UserController::class, 'getMyNews'])->name('mynews');
+
+Route::get('/like/{news_id}', [UserController::class, 'like'])->name('user.like');
