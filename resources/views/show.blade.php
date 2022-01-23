@@ -27,8 +27,8 @@
     @foreach($related_news as $related_onenews)
     <div class="out_related_block">
     <div class="related_onenews m-3">
-    <div class="related_news_col"><h4>{{$related_onenews->name}}</h4></div>
-
+    <div class="related_news_col"><a href="{{route('news.show', $related_onenews)}}"><h4>{{$related_onenews->name}}</h4></a></div>
+  
     <div class="related_news_col">
         <span class="date_news">{{$related_onenews->date}}</span>
             <img src="{{$related_onenews->image}}" alt=""></div>
