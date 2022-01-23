@@ -10,20 +10,23 @@ DB MySql
 ## Установка
 
 git clone https://github.com/prosto7/news.git
+<br>
 cd news
+<br>
 composer install
+<br>
 npm install
-
+<br>
 вводим настройки БД в файле .env.example и переименовываем в '.env' 
-
+<br>
 php artisan key:generate
-
-Далее можем использовать дамп БД файл 'dump.sql', либо сделать миграции
+<br>
+Далее можем использовать дамп БД файл 'dump.sql', либо сделать миграции<br>
 php artisan migrate
-
-Заполняем таблицы фейковыми данными с помощью команды:
+<br>
+Заполняем таблицы фейковыми данными с помощью команды:<br>
 php artisan db:seed 
-
+<br>
 php artisan serve
 
 ## Модель БД
