@@ -14,10 +14,4 @@ class User extends Model
         return $this->belongsToMany(News::class);
     }
 
-
-
-
-
-
-
 }

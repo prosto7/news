@@ -9,6 +9,5 @@ class NewsUser extends Model
 {
     protected $table = 'news_user';
     use HasFactory;
-
    
 }

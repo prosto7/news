@@ -35,12 +35,12 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('mynews')}}">My News</a>
           </li>
-      
+  
         </ul>
      
         <form action="{{ route('news.index') }}" method="GET" role="search" class="form-inline my-2 my-lg-0">
         <input type="text" class="form-control mr-2" name="term" placeholder="Search news" id="term">
-                        <a href="{{ route('news.index') }}" class=" mt-1">
+                       
      
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       

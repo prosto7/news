@@ -12,5 +12,9 @@ class News extends Model
     {
         return $this->belongsToMany(User::class);
     }
+    public function cities()
+    {
+        return $this->belongsTo(City::class);
+    }
 
 }
