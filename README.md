@@ -18,6 +18,7 @@ composer install
 npm install
 <br>
 cp .env.example .env
+<br>
 вводим настройки БД в файле .env 
 <br>
 php artisan key:generate
